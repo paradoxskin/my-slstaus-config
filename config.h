@@ -68,6 +68,9 @@ static const struct arg args[] = {
 	{cpu_perc,	" ﬙ %s%%|",	NULL},
 	{ram_perc,	" %s%%|",	NULL},
 	{wifi_essid,	" %s|",	"wlp4s0"},
-	{battery_perc,	" %s%%|",	"BAT0"},
+	// run_command may beautifly but don't know it will dis the batterty
+	//{run_command,	"%s",		"upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | awk -F \" \" \'{if($2==\"charging\")print \"ﮣ \";else print \"  \"}\'"},
+	{battery_perc,	" %s%%",	"BAT0"},
+	{battery_state,	"%s|",	"BAT0"},
 	{ datetime, 	" %s  ",	"%T"},
 };
